@@ -2,14 +2,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Album example · Bootstrap</title>
+    <title>Alexandra Vorobeva</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -45,20 +45,20 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Alexandra Vorobeva</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Alexandra Vorobeva</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Resume</a>
+                  <a class="nav-link" href="{% static 'OVRO_003_Alexandra.pdf' %}">Resume</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Facebook</a>
+                  <a class="nav-link" href="https://www.facebook.com/alexnartova">Facebook</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
                 </li>
               </ul>
             </div>
@@ -74,44 +74,54 @@
       <p>
         <a href="mailto:vorobeva.alexa@gmail.com" class="btn btn-primary my-2">Email me</a>
       </p>
+      <img src="{% static 'DSC06884.jpg' %}" height=300/>
     </div>
   </section>
 
   <div class="album py-5 bg-light">
     <div class="container">
 
-
-      <div class="row">
-          
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+      <!doctype html>
+      <html lang="en">
+      
+      <main role="main">
+      
+        <div class="album py-5 bg-light">
+          <div class="container">
+      
+      
+            <div class="row">
+                
+              {% for job in jobs.all %}
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="{{ job.image.url }}" />
+                  <div class="card-body">
+                    <p class="card-text">{{ job.summary }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
                 </div>
-                <small class="text-muted">9 mins</small>
               </div>
+              {% endfor %}
+      
             </div>
           </div>
         </div>
-        {% endfor %}
+      
+      </main>
+      
+      <footer class="text-muted">
+        <div class="container" text-center>
+          <p>© Alexandra Vorobeva {% now "Y" %}</p>
+        </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
+      </html>
 
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<footer class="text-muted">
-  <div class="container" text-center>
-    <p>© Alexandra Vorobeva {% now "Y" %}</p>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
-</html>
