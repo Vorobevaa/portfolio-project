@@ -1,13 +1,15 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import get_object_or_404
 from .models import Blog
+from django.views.generic.list import ListView
+from django.views.generic import DetailView
 
 
-def allblogs(request):
-    blogs = Blog.objects
-    return render(request, 'blog/allblogs.html', {'blogs': blogs})
+class Allblogs(ListView):
+    model = Blog
+    template_name = 'blog/allblogs.html'
 
 
-def detail(request, blog_id):
-    detailblog = get_object_or_404(Blog, pk=blog_id)
-    return render(request, 'blog/detail.html', {'blog': detailblog})
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = 'blog/detail.html'
+    pk_url_kwarg = 'blog_id'
