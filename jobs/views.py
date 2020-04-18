@@ -1,8 +1,7 @@
-from django.shortcuts import render
-
 from .models import Job
+from django.views.generic.list import ListView
 
 
-def home(request):
-    jobs = Job.objects
-    return render(request, 'jobs/home.html', {'jobs': jobs})
+class Home(ListView):
+    model = Job
+    template_name = 'jobs/home.html'
