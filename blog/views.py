@@ -1,10 +1,10 @@
-from django.shortcuts import get_object_or_404
-from .models import Blog
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
 
+from .models import Blog
 
-class Allblogs(ListView):
+
+class AllBlogs(ListView):
     model = Blog
     template_name = 'blog/allblogs.html'
 
