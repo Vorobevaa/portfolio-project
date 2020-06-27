@@ -52,9 +52,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="{% static 'CV-Vorobeva.pdf' %}">Resume</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="https://www.facebook.com/alexnartova">Facebook</a>
                 </li>
                 <li class="nav-item">
@@ -69,12 +66,12 @@
 
   <section class="jumbotron text-center">
     <div class="container">
+      <img src="{% static 'airplane.png' %}" height="80" />
       <h1>Hi, I'm Alexandra</h1>
       <p class="lead text-muted">Welcome to my Website!</p>
       <p>
         <a href="mailto:vorobeva.alexa@gmail.com" class="btn btn-primary my-2">Email me</a>
       </p>
-      <img src="{% static 'DSC06884.jpg' %}" />
     </div>
   </section>
 
@@ -92,12 +89,12 @@
       
             <div class="row">
                 
-              {% for job in object_list %}
+              {% for content in object_list %}
               <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                  <img class="card-img-top" src="{{ job.image.url }}" />
+                  <img class="card-img-top" src="{{ content.image.url }}" />
                   <div class="card-body">
-                    <p class="card-text">{{ job.summary }}</p>
+                    <p class="card-text">{{ content.title }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>

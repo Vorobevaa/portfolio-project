@@ -2,7 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=django
 
 ### Django ###
-portfolio-project/portfolio/settings/development.py
+/portfolio/settings/development.py
 *.log
 *.pot
 *.pyc

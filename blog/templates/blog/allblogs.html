@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html lang="en">
-  {% load staticfiles %}
+  {% load static %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,9 +53,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% static 'CV-Vorobeva.pdf' %}">Resume</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="https://www.facebook.com/alexnartova">Facebook</a>
             </li>
             <li class="nav-item">
@@ -93,12 +90,12 @@
 
       <div class="row">
           
-        {% for job in jobs.all %}
+        {% for content in contents.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}" />
+            <img class="card-img-top" src="{{ content.image.url }}" />
             <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
+              <p class="card-text">{{ content.summary }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
