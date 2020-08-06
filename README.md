@@ -2,6 +2,8 @@
 
 I created a personal web site to show off my work.
 
+![home_page](https://github.com/Vorobevaa/portfolio-project/issues/10#issue-674135429)
+
 
 # I learned how to: 
 
