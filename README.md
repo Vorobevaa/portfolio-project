@@ -1,4 +1,4 @@
-# portfolio-project
+# This is my training project.
 
 I created a personal web site to show off my work.
 
@@ -6,7 +6,7 @@ I created a personal web site to show off my work.
 
 
 
-# I learned how to: 
+## I learned how to: 
 
 Add apps to my project
 Create virtual environments
